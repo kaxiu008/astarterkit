@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "7b029bd7-6bc4-420e-b7e6-aab4b740e05a",
+		"name": "Reqres.in",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET SINGLE USER",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6bda88d2-78dc-4bea-b818-be5916dfcf8d",
+						"exec": [
+							"// example using pm.response.to.have",
+							"pm.test(\"response is ok\", function () {",
+							"    // assert that the status code is 200",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     // assert that the status code is 200",
+							"     pm.response.to.be.ok; // info, success, redirection, clientError,  serverError, are other variants",
+							"     // assert that the response has a valid JSON body",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json; ",
+							"});",
+							"",
+							"// example using pm.expect()",
+							"pm.test(\"response include user name as Janet\", function () {",
+							"    //put response Body into jsonData",
+							"    var jsonData = pm.response.json();",
+							"    // assert that the response has user name as Janet",
+							"    pm.expect(jsonData.data.first_name).to.eql(\"Janet\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users/2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST CREATE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ebbd7bf6-5d22-4744-9cf9-a3f48e8869f1",
+						"exec": [
+							"// example using pm.response.to.have",
+							"pm.test(\"response is ok\", function () {",
+							"    // assert that the status code is 201",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     // assert that the status code is not error",
+							"     pm.response.to.not.be.error; ",
+							"     // assert that the response has a valid JSON body",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json; ",
+							"});",
+							"",
+							"// example using pm.expect()",
+							"pm.test(\"response include job of new created user as Tester\", function () {",
+							"    //put response Body into jsonData",
+							"    var jsonData = pm.response.json();",
+							"    // assert that the response has job field as Tester",
+							"    pm.expect(jsonData.job).to.eql(\"Tester\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Jackie\",\n    \"job\": \"Tester\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ebbd7bf6-5d22-4744-9cf9-a3f48e8869f1",
+						"exec": [
+							"// example using pm.response.to.have",
+							"pm.test(\"response is ok\", function () {",
+							"    // assert that the status code is 200",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using pm.response.to.be*",
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     // assert that the status code is not error",
+							"     pm.response.to.not.be.error; ",
+							"     // assert that the response has a valid JSON body",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json; ",
+							"});",
+							"",
+							"// example using pm.expect()",
+							"pm.test(\"response include job of new created user as Tester\", function () {",
+							"    //put response Body into jsonData",
+							"    var jsonData = pm.response.json();",
+							"    // assert that the response has job field as Tester",
+							"    pm.expect(jsonData.job).to.eql(\"Tester\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Jackie\",\n    \"job\": \"Tester\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users/2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
